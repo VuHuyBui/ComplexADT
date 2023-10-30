@@ -1,0 +1,137 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{times}
+\usepackage{amsmath}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{strategy}{Strategy}
+
+\newcommand{\ra}{\rightarrow}
+\newcommand{\tagg}[1]{\noindent \textbf{{#1}} \\ }
+\newcommand{\floor}[1]{\lfloor {#1} \rfloor}
+\newcommand{\ceil}[1]{\lceil {#1} \rceil}
+
+\setlength{\topmargin}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+
+\thispagestyle{empty}
+%\pagestyle{empty}
+
+%================================================================
+
+\begin{document}
+
+\begin{center}
+CS173: Intermediate Programming \\
+\Large{Complex ADT}
+\end{center}
+
+\begin{tabular}{|p{1in}|p{4in}|}
+\hline
+\multicolumn{2}{|l|}{Overview} \\ \hline
+\multicolumn{2}{|p{5in}|}{
+The Complex data structure stores and manipulates complex numbers of the form $a+bi$ where $a$ and $b$ are real numbers.  This Complex type supports a multitude of arithmetic operations pertinent to complex numbers; these operations are described below.
+}  \\
+\hline
+\hline
+\multicolumn{2}{|l|}{Constructors} \\ \hline
+default & A new Complex data type should default to the value of $0+0i$.  \\
+ & \texttt{Complex c; } \\
+\hline
+copy & Create a new Complex type from an existing one. \\
+& \texttt{Complex c1(c2); } \\
+\hline
+Complex(a,b) & We should be able to specify a new Complex type by giving its real and imaginary components.   The imaginary part defaults to 0.  \\
+& \texttt{Complex c1(2,3.1);  Complex c2(2.5);} \\
+\hline
+\hline
+\multicolumn{2}{|l|}{Operators} \\ \hline
+addition & Should support addition between two complex numbers, complex and int, and complex and float.  \\
+& \texttt{c1 = c2 + c3;  c1 = c2 + 5.5; } \\
+\hline
+subtraction & Should support subtraction between two complex numbers, complex and int, and complex and float.  \\
+& \texttt{c1 = c2 - c3;  c1 = c2 - 5; } \\
+\hline
+multiplication & Should support multiplication between two complex numbers, complex and int, and complex and float.  \\
+& \texttt{c1 = c2 * c3;  c1 = c2 * 5.5; } \\
+\hline
+division & Should support division between two complex numbers, complex and int, and complex and float.  \\
+& \texttt{c1 = c2 / c3;  c1 = c2 / 5; } \\
+\hline
+conjugate & The $\sim$ operator returns the complex conjugate.  \\
+& \texttt{c1 = $\sim$c2;} \\
+\hline
+negation & The $-$ operator returns the negative of a complex.  \\
+& \texttt{c1 = -c2;} \\
+\hline
+exponentiation & The $\wedge$ operator should raise a complex number to an integer power. \\
+& \texttt{c1 = c2$\wedge$x;} (where $x$ is integer only)\\
+\hline
+abs & The abs method should return the distance from the origin. \\
+& \texttt{c1.abs()}  \\
+\hline
+\end{tabular}
+
+\begin{tabular}{|p{1in}|p{4in}|}
+\hline
+\multicolumn{2}{|l|}{Modifiers and Accessors} \\ \hline
+setReal & Sets the real part of the complex number. \\
+   & \texttt{c1.setReal(5);} \\
+\hline
+getReal & Gets the real part of the complex number. \\
+   & \texttt{float f = c1.getReal();} \\
+\hline
+setImag & Sets the imaginary part of the complex number. \\
+   & \texttt{c1.setImag(5);} \\
+\hline
+getImag & Gets the imaginary part of the complex number. \\
+   & \texttt{float f = c1.getImag();} \\
+\hline
+\hline
+\multicolumn{2}{|l|}{Other} \\ \hline
+assignment & Allows assignment of values between complex numbers. \\
+operator & \texttt{c1 = c2;} \\
+\hline
+destructor & Cleans up the complex class. \\
+\hline
+equality & Equal if both real and imaginary parts are equal. \\
+operator & \texttt{c1 == c2;}  \\
+\hline
+inequality &True if either real or imaginary parts are not equal. \\
+operator & \texttt{c1 != c2;} \\
+\hline
+greaterThan & Returns true if abs(c1) \texttt{>} abs(c2), false otherwise. \\
+operator & \texttt{c1 > c2;} \\
+\hline
+greaterEqual & Returns true if abs(c1) \texttt{>=} abs(c2), false otherwise. \\
+operator & \texttt{c1 >= c2;} \\
+\hline
+lessThan & Returns true if abs(c1) \texttt{<} abs(c2), false otherwise. \\
+operator & \texttt{c1 < c2;} \\
+\hline
+lessEqual & Returns true if abs(c1) \texttt{<=} abs(c2), false otherwise. \\
+operator & \texttt{c1 <= c2;} \\
+\hline
+\texttt{cout <<} & Allows printing of a complex number as a string "$a+bi$". \\
+& \texttt{ cout << c1 << endl;} \\
+& print \texttt{a+0i} as a \\
+& print \texttt{0+bi} as bi \\
+& print \texttt{a+-bi} as a-bi \\
+\hline
+\texttt{cin>>} & Allows reading of a complex number as a string "$a$+$bi$". \\
+& \texttt{ cin >> c1;} \\
+& reads: \texttt{a+bi, a-bi, -a+bi, -a-bi, a+-bi, +a+bi} \\
+& reads: \texttt{a, -a, +a, bi, -bi, +bi} \\
+& where \texttt{a,b} can be integers or reals with decimal points \\
+\hline
+\end{tabular}
+
+
+\end{document}
+
+
+ 
