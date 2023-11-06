@@ -42,8 +42,8 @@ int main ( void )
     cout << "c3 = c1/c2 = " << c3 << endl;
 
     // exponentiation test
-    c3 = c1^3;
-    cout << c1 << "^" << 3 << " = " << c3 << endl;
+    c3 = c1^-3;
+    cout << c1 << "^" << -3 << " = " << c3 << endl;
 
     // abs test
     cout << "c1.abs() = " << c1.abs() << endl;
@@ -52,6 +52,5 @@ int main ( void )
     cout << "Enter c3: ";
     cin >> c3;
     cout << c3 << endl;
-
     return 0;
 }

@@ -171,11 +171,21 @@ Complex Complex::operator/(float f) const
 
 Complex Complex::operator^(int p) const
 {
+    Complex one(1, 0);
+
+    if (p == 0)
+    {
+        return one;
+    }
     Complex res(a, b);
     Complex temp(a, b);
     for (int i = 0; i < p - 1; i++)
     {
         res = res * temp;
+    }
+    if (p < 0)
+    {
+        res = one / res;
     }
 
     return res;
