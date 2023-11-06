@@ -236,18 +236,36 @@ istream &operator>>(istream &is, Complex &c)
         size_t plus = s.substr(1, s.length() - 1).find('+');
         size_t minus = s.substr(1, s.length() - 1).find('-');
         if (plus == string::npos && minus == string::npos)
-            c.b = stof(s);
+        {
+            if (i_spot == 0)
+                c.b = 1;
+            else if (i_spot == 1 && s[0] == '-')
+                c.b = -1;
+            else if (i_spot == 1 && s[0] == '+')
+                c.b = 1;
+            else
+                c.b = stof(s);
+        }
         else
         {
             if (plus != string::npos)
             {
+
                 c.a = stof(s.substr(0, plus + 1));
-                c.b = stof(s.substr(plus + 2, s.length() - plus - 1 - 1));
+                if (plus + 2 == i_spot)
+                    c.b = 1;
+                else if (minus + 2 == i_spot)
+                    c.b = -1;
+                else
+                    c.b = stof(s.substr(plus + 2, s.length() - plus - 1 - 1));
             }
             else if (minus != string::npos)
             {
                 c.a = stof(s.substr(0, minus + 1));
-                c.b = stof(s.substr(minus + 1, s.length() - minus - 1 - 1));
+                if (minus + 2 == i_spot)
+                    c.b = -1;
+                else
+                    c.b = stof(s.substr(minus + 1, s.length() - minus - 1 - 1));
             }
         }
     }
@@ -275,7 +293,7 @@ ostream &operator<<(ostream &os, const Complex c)
     else if (c.b < 0)
         os << c.a << strb << "i";
     else
-        os << c.a << strb << "i";
+        os << c.a << "+" << strb << "i";
 
     return os;
 }
