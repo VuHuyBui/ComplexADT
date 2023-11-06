@@ -260,17 +260,22 @@ istream &operator>>(istream &is, Complex &c)
 //========================================================
 ostream &operator<<(ostream &os, const Complex c)
 {
+    string strb = to_string(c.b);
+    if (abs(c.b) == 1)
+    {
+        strb = strb.substr(0, strb.find('1'));
+    }
     if (c.a == 0 && c.b == 0)
         os << 0;
     else if (c.b == 0)
         os << c.a;
 
     else if (c.a == 0)
-        os << c.b << "i";
+        os << strb << "i";
     else if (c.b < 0)
-        os << c.a << "-" << -c.b << "i";
+        os << c.a << strb << "i";
     else
-        os << c.a << "+" << c.b << "i";
+        os << c.a << strb << "i";
 
     return os;
 }
