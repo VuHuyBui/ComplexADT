@@ -14,6 +14,13 @@ using namespace std;
 
 //========================================================
 // setReal access method
+// setReal - Set the real part of a complex number.
+//
+// Parameters:
+// r - The real part to set.
+//
+// Return Value:
+// None
 //========================================================
 void Complex::setReal(float r)
 {
@@ -21,6 +28,13 @@ void Complex::setReal(float r)
 }
 //========================================================
 // getReal access method
+// getReal - Get the real part of a complex number.
+//
+// Parameters:
+// None
+//
+// Return Value:
+// The real part of the complex number.
 //========================================================
 float Complex::getReal(void) const
 {
@@ -28,6 +42,13 @@ float Complex::getReal(void) const
 }
 //========================================================
 // setImag
+// setImag - Set the imaginary part of a complex number.
+//
+// Parameters:
+// x - The imaginary part to set.
+//
+// Return Value:
+// None
 //========================================================
 
 void Complex::setImag(float x)
@@ -37,6 +58,13 @@ void Complex::setImag(float x)
 
 //========================================================
 // getImag
+// getImag - Get the imaginary part of a complex number.
+//
+// Parameters:
+// None
+//
+// Return Value:
+// The imaginary part of the complex number.
 //========================================================
 
 float Complex::getImag(void) const
@@ -46,7 +74,15 @@ float Complex::getImag(void) const
 
 //========================================================
 // assignment operator
+// operator= - Assignment operator for complex numbers.
+//
+// Parameters:
+// c - The complex number to assign.
+//
+// Return Value:
+// The assigned complex number.
 //========================================================
+
 Complex Complex::operator=(const Complex &c)
 {
     a = c.a;
@@ -55,6 +91,14 @@ Complex Complex::operator=(const Complex &c)
 }
 //========================================================
 // addition operators
+// operator+ - Addition operator for complex numbers.
+// Adds two complex numbers.
+//
+// Parameters:
+// c - The complex number to add.
+//
+// Return Value:
+// The result of the addition.
 //========================================================
 Complex Complex::operator+(const Complex &c) const
 {
@@ -64,7 +108,15 @@ Complex Complex::operator+(const Complex &c) const
 
     return res;
 }
-
+//========================================================
+// operator+ - Addition operator for a complex number and an integer.
+//
+// Parameters:
+// i - The integer to add.
+//
+// Return Value:
+// The result of the addition.
+//========================================================
 Complex Complex::operator+(int i) const
 {
     Complex res;
@@ -72,7 +124,15 @@ Complex Complex::operator+(int i) const
     res.b = b;
     return res;
 }
-
+//========================================================
+// operator+ - Addition operator for a complex number and a float.
+//
+// Parameters:
+// f - The float to add.
+//
+// Return Value:
+// The result of the addition.
+//========================================================
 Complex Complex::operator+(float f) const
 {
     Complex res;
@@ -84,6 +144,16 @@ Complex Complex::operator+(float f) const
 //========================================================
 // subtraction operators
 //========================================================
+//========================================================
+// operator- - Subtraction operator for complex numbers.
+// Subtracts one complex number from another.
+//
+// Parameters:
+// c - The complex number to subtract.
+//
+// Return Value:
+// The result of the subtraction.
+//========================================================
 
 Complex Complex::operator-(const Complex &c) const
 {
@@ -92,7 +162,15 @@ Complex Complex::operator-(const Complex &c) const
     res.b = b - c.b;
     return res;
 }
-
+//========================================================
+// operator- - Subtraction operator for a complex number and an integer.
+//
+// Parameters:
+// i - The integer to subtract.
+//
+// Return Value:
+// The result of the subtraction.
+//========================================================
 Complex Complex::operator-(int i) const
 {
     Complex res;
@@ -100,7 +178,15 @@ Complex Complex::operator-(int i) const
     res.b = b;
     return res;
 }
-
+//========================================================
+// operator- - Subtraction operator for a complex number and a float.
+//
+// Parameters:
+// f - The float to subtract.
+//
+// Return Value:
+// The result of the subtraction.
+//========================================================
 Complex Complex::operator-(float f) const
 {
     Complex res;
@@ -112,7 +198,16 @@ Complex Complex::operator-(float f) const
 //========================================================
 // multiplication operators
 //========================================================
-
+//========================================================
+// operator* - Multiplication operator for complex numbers.
+// Multiplies two complex numbers.
+//
+// Parameters:
+// c - The complex number to multiply.
+//
+// Return Value:
+// The result of the multiplication.
+//========================================================
 Complex Complex::operator*(const Complex &c) const
 {
     Complex res;
@@ -120,7 +215,15 @@ Complex Complex::operator*(const Complex &c) const
     res.b = a * c.b + b * c.a;
     return res;
 }
-
+//========================================================
+// operator* - Multiplication operator for a complex number and an integer.
+//
+// Parameters:
+// i - The integer to multiply.
+//
+// Return Value:
+// The result of the multiplication.
+//========================================================
 Complex Complex::operator*(int i) const
 {
     Complex res;
@@ -128,7 +231,15 @@ Complex Complex::operator*(int i) const
     res.b = b * i;
     return res;
 }
-
+//========================================================
+// operator* - Multiplication operator for a complex number and a float.
+//
+// Parameters:
+// f - The float to multiply.
+//
+// Return Value:
+// The result of the multiplication.
+//========================================================
 Complex Complex::operator*(float f) const
 {
     Complex res;
@@ -140,7 +251,16 @@ Complex Complex::operator*(float f) const
 //========================================================
 // division operators
 //========================================================
-
+//========================================================
+// operator/ - Division operator for complex numbers.
+// Divides one complex number by another.
+//
+// Parameters:
+// c - The complex number to divide by.
+//
+// Return Value:
+// The result of the division.
+//========================================================
 Complex Complex::operator/(const Complex &c) const
 {
     Complex res;
@@ -148,7 +268,15 @@ Complex Complex::operator/(const Complex &c) const
     res.b = (b * c.a - a * c.b) / (c.a * c.a + c.b * c.b);
     return res;
 }
-
+//========================================================
+// operator/ - Division operator for a complex number by an integer.
+//
+// Parameters:
+// i - The integer to divide by.
+//
+// Return Value:
+// The result of the division.
+//========================================================
 Complex Complex::operator/(int i) const
 {
     Complex res;
@@ -156,7 +284,15 @@ Complex Complex::operator/(int i) const
     res.b = b / (float)i;
     return res;
 }
-
+//========================================================
+// operator/ - Division operator for a complex number by a float.
+//
+// Parameters:
+// f - The float to divide by.
+//
+// Return Value:
+// The result of the division.
+//========================================================
 Complex Complex::operator/(float f) const
 {
     Complex res;
@@ -168,7 +304,17 @@ Complex Complex::operator/(float f) const
 //========================================================
 // exponentiation
 //========================================================
-
+//========================================================
+// exponentiation
+// operator^ - Exponentiation operator for a complex number.
+// Raises the complex number to a given integer power.
+//
+// Parameters:
+// p - The integer exponent to raise the complex number to.
+//
+// Return Value:
+// The result of raising the complex number to the given power.
+//========================================================
 Complex Complex::operator^(int p) const
 {
     Complex one(1, 0);
@@ -190,11 +336,14 @@ Complex Complex::operator^(int p) const
 
     return res;
 }
-
 //========================================================
 // operator~
+// operator~ - Conjugate operator for a complex number.
+// Computes the conjugate of the complex number by negating the imaginary part.
+//
+// Return Value:
+// The complex conjugate of the original complex number.
 //========================================================
-
 Complex Complex::operator~(void) const
 {
     Complex res;
@@ -204,14 +353,27 @@ Complex Complex::operator~(void) const
 }
 
 //========================================================
-// abs
+// abs - Calculate the absolute value (magnitude) of the complex number.
+//
+// Parameters:
+// None
+//
+// Return Value:
+// The absolute value (magnitude) of the complex number.
 //========================================================
 float Complex::abs(void) const
 {
     return sqrt(a * a + b * b);
 }
 //========================================================
-// equality operator
+// operator== - Equality operator for complex numbers.
+// Checks if two complex numbers are equal.
+//
+// Parameters:
+// c - The complex number to compare.
+//
+// Return Value:
+// True if the complex numbers are equal, otherwise false.
 //========================================================
 
 bool Complex::operator==(const Complex &c) const
@@ -220,7 +382,14 @@ bool Complex::operator==(const Complex &c) const
 }
 
 //========================================================
-// inequality operator
+// operator!= - Inequality operator for complex numbers.
+// Checks if two complex numbers are not equal.
+//
+// Parameters:
+// c - The complex number to compare.
+//
+// Return Value:
+// True if the complex numbers are not equal, otherwise false.
 //========================================================
 
 bool Complex::operator!=(const Complex &c) const
@@ -229,7 +398,14 @@ bool Complex::operator!=(const Complex &c) const
 }
 
 //========================================================
-// overload >> for cin
+// operator>> - Overload >> for cin to input complex numbers.
+//
+// Parameters:
+// is - The input stream (cin).
+// c - The complex number to read from the input stream.
+//
+// Return Value:
+// The input stream (cin) after reading the complex number.
 //========================================================
 
 istream &operator>>(istream &is, Complex &c)
@@ -284,7 +460,14 @@ istream &operator>>(istream &is, Complex &c)
 }
 
 //========================================================
-// overload << for cout
+// operator<< - Overload << for cout to output complex numbers.
+//
+// Parameters:
+// os - The output stream (cout).
+// c - The complex number to write to the output stream.
+//
+// Return Value:
+// The output stream (cout) after writing the complex number.
 //========================================================
 ostream &operator<<(ostream &os, const Complex c)
 {
