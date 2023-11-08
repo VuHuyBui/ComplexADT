@@ -1,5 +1,7 @@
 //========================================================
-// put all group names here
+// James Bui
+// Francessco Assalone
+// Dipanker Thapa
 // Complex.cpp
 // November 2023
 // This file contains the class methods for the
