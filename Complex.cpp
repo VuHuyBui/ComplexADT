@@ -1,7 +1,7 @@
 //========================================================
 // James Bui - part 3
-// Francessco Assalone - part 2
-// Dipanker Siddhi Thapa - part 1
+// Francessco Assalone - part 1
+// Dipanker Siddhi Thapa - part 2
 // Complex.cpp
 // November 2023
 // This file contains the class methods for the
